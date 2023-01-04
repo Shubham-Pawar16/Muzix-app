@@ -43,6 +43,7 @@
 		<module>MovieService</module>
 		<module>UserAuthentication</module>
 		<module>EurekaServer</module>
+		<module>ApiGateway</module>
 	</modules>
 	<build>
 		<plugins>
