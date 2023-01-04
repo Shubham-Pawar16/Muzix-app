@@ -19,10 +19,11 @@ public class UserMovieServiceImpl implements UserMovieService{
 
     @Override
     public User registerUser(User user) throws UserAlreadyExistsException {
-        if (userMovieRepository.findById(user.getEmail()).isPresent())
-        {
-            throw new UserAlreadyExistsException();
-        }
+//        if (userMovieRepository.findById(user.getEmail()).isPresent())
+//        {
+//            throw new UserAlreadyExistsException();
+//        }
+        return user;
     }
 
     @Override
