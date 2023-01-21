@@ -1,0 +1,42 @@
+.movie-img {
+  width: 400px;
+  height: 600px;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+
+#bgimg {
+  
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  
+  
+}
+
+#infoCard {
+  opacity: 1;
+  display: flex;
+  
+}
+
+.cardContent {
+position: relative;
+width: 600px;
+height: 500px;
+padding: 20px;
+top:120px;
+color: black;
+font-weight: 600px;
+margin-left: 80px;
+background: rgba(255,255,255,.2);
+box-shadow: 0 5px 15px rgba(0,2,0,.5);
+}
+mat-card-subtitle{
+ 
+  font-weight: bolder;
+  font-size: large;
+}
+.mat-icon{
+  transform: scale(2);
+}

@@ -1,0 +1,30 @@
+.update_profile {
+    margin: 120px auto;
+  }
+  
+  .image {
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+  
+  .upload {
+    margin-top: 15px;
+  }
+  
+  .upload button {
+    margin-top: 10px;
+  }
+  
+  .upload input[type="file"]::file-selector-button {
+    border: none;
+    color: white;
+    background-color: #f44336;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 15px;
+  }
+  
+  
