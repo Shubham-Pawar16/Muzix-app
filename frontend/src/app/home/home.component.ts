@@ -10,27 +10,31 @@ export class HomeComponent {
 
   movies1: any = []
   allMovies: any = []
-  currentPg:number=1;
+  currentPg: number = 1;
 
   isLoginSuccess: boolean = false;
 
-  searchItem:any;
-  searchmovie:any;
-  searchedMovies: any=[];
-  allSearchedMovies: any=[];
+  searchItem: any;
+  searchmovie: any;
+  searchedMovies: any = [];
+  allSearchedMovies: any = [];
   isReady = false;
 
-  constructor(private movieService:MovieService){
+  constructor(private movieService: MovieService) {
     this.getMovies();
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.bannerData();
   }
 
-  bannerData(){
-    this.movieService.bannerApiData().subscribe((result)=>{
-      console.log(result,'bannerresult#');
+  reset() {
+    window.location.reload()
+  }
+
+  bannerData() {
+    this.movieService.bannerApiData().subscribe((result) => {
+      console.log(result, 'bannerresult#');
     });
   }
 
@@ -48,23 +52,23 @@ export class HomeComponent {
     this.movieService.selectedMovie(data);
   }
 
-  decreasePage(){
+  decreasePage() {
     this.currentPg--;
     this.getMovies();
   }
-  increasePage(){
+  increasePage() {
     this.currentPg++;
     this.getMovies();
   }
 
-  searchRequiredMovie(searchtext:any) {
-    this.movieService.searchMovie(searchtext,this.currentPg).subscribe(resp=>{
-      this.searchedMovies=resp;
-      this.allSearchedMovies=this.searchedMovies.results;
-      this.allMovies=this.allSearchedMovies;
+  searchRequiredMovie(searchtext: any) {
+    this.movieService.searchMovie(searchtext, this.currentPg).subscribe(resp => {
+      this.searchedMovies = resp;
+      this.allSearchedMovies = this.searchedMovies.results;
+      this.allMovies = this.allSearchedMovies;
       // this.movser.storeSearchedMovieToJson(this.allSearchedMovies);
       console.log(this.allSearchedMovies);
-      this.isReady=true;
+      this.isReady = true;
     })
   }
 

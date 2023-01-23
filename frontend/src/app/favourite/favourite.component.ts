@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { MovieService } from '../movie.service';
 
@@ -20,7 +21,7 @@ export class FavouriteComponent {
   allMovies: any = []
   currentPg:number=1;
 
-  constructor(private movieService: MovieService,private router:Router) {  }
+  constructor(private movieService: MovieService,private router:Router,private snackBar:MatSnackBar) {  }
   ngOnInit(): void {
     this.emailId=localStorage.getItem('emailId')
     this.getFavouriteMovies();
@@ -39,11 +40,12 @@ export class FavouriteComponent {
   movieDetails(data: any) {
     this.movieService.selectedMovie(data);
   }
+  
   deleteMovie(data:any) {
     this.movieService.deleteFavouriteFromMovieService(data.id,this.emailId).subscribe(res=>{
-      console.log("deleting in movie service ");  
       console.log(res);
-      
+      this.snackBar.open("Movie Deleted!!")
+      console.log(res);      
     })
     window.location.reload()    
   }

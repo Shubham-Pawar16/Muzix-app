@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 import { User } from '../models/models/user';
@@ -12,7 +13,7 @@ import { User } from '../models/models/user';
 export class LoginComponent {
   user =new User()
 
-  constructor(private login:LoginService,private route:Router, private fb:FormBuilder ) { }
+  constructor(private login:LoginService,private route:Router, private fb:FormBuilder, private snackBar:MatSnackBar) { }
   profileForm = this.fb.group({
     email: ['', [Validators.required]],
     password: ['', [Validators.required]],
@@ -30,15 +31,18 @@ export class LoginComponent {
        this.login.storeToken(data.token)
        console.log(this.email)
        console.log(data.token)
-        
-       // alert("Login Successful!");
-        this.route.navigate(["/home"])
+       this.snackBar.open("Login Successfully!", "Close", { duration: 3000 }); 
+       this.route.navigate(["/home"]);
     },
       error => {
         window.alert("Login Failed! Please Enter the correct Credentials!")
         console.log("exception occured")
       }
     )
+  }
+
+  reload(){
+    window.location.reload();
   }
 
 }

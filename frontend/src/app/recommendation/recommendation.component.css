@@ -1,4 +1,8 @@
-
+.head{
+    text-align: center;
+    padding:10px 20px 10px 20px;
+    background-image: linear-gradient(90deg,rgb(12, 73, 117) 0%, hsla(260,29%,36%,1) 100%);
+  }
 
 .card{
     flex-basis: 250px;
@@ -106,4 +110,12 @@
     height: 35px;
     margin-left: 10px;
     color:  rgb(13, 110, 253);
+    cursor: pointer;
   }
+
+  .reset{
+    border-radius: 3px;
+    margin-left: -270px;
+    color:  rgb(240, 242, 244);
+    cursor: pointer;
+}

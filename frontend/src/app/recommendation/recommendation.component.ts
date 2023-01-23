@@ -10,15 +10,15 @@ export class RecommendationComponent {
   titleMovie: string | undefined;
   recommendedMovies: any;
   allRecommendedMovies: any;
-  currentPg:number=1;
-  searchItem:any;
-  searchmovie:any;
-  searchedMovies: any=[];
-  allSearchedMovies: any=[];
+  currentPg: number = 1;
+  searchItem: any;
+  searchmovie: any;
+  searchedMovies: any = [];
+  allSearchedMovies: any = [];
   isReady = false;
   allMovies: any = []
   movies1: any = []
- 
+
 
   constructor(private movieService: MovieService) {
     this.titleMovie = this.movieService.movieName;
@@ -35,14 +35,14 @@ export class RecommendationComponent {
     this.movieService.selectedMovie(data);
   }
 
-  searchRequiredMovie(searchtext:any) {
-    this.movieService.searchMovie(searchtext,this.currentPg).subscribe(resp=>{
-      this.searchedMovies=resp;
-      this.allSearchedMovies=this.searchedMovies.results;
-      this.allMovies=this.allSearchedMovies;
+  searchRequiredMovie(searchtext: any) {
+    this.movieService.searchMovie(searchtext, this.currentPg).subscribe(resp => {
+      this.searchedMovies = resp;
+      this.allSearchedMovies = this.searchedMovies.results;
+      this.allMovies = this.allSearchedMovies;
       // this.movser.storeSearchedMovieToJson(this.allSearchedMovies);
       console.log(this.allSearchedMovies);
-      this.isReady=true;
+      this.isReady = true;
     })
   }
   getMovies() {
@@ -54,13 +54,17 @@ export class RecommendationComponent {
     })
   }
 
-  decreasePage(){
+  decreasePage() {
     this.currentPg--;
     this.getMovies();
   }
-  increasePage(){
+  increasePage() {
     this.currentPg++;
     this.getMovies();
+  }
+
+  reset() {
+    window.location.reload()
   }
 
 }

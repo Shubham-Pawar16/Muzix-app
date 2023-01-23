@@ -12,6 +12,7 @@ export class LoginService {
   constructor(private httpClient: HttpClient) { }
   redirectUrl: string = "";
   isLoginSuccess: boolean = false;
+  currentUser?: User;
   email: any;
   URL: string = "https://api.cloudinary.com/v1_1/dxndjx3ct/image/upload"
   profilePicture?: string;

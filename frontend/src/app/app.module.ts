@@ -31,11 +31,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { PlayComponent } from './play/play.component';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
-
-
-
-
-
+import { PosterComponent } from './poster/poster.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -51,6 +48,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     SafePipe,
     DashboardComponent,
     PlayComponent,
+    PosterComponent,
+    
     
     
   ],
@@ -74,7 +73,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatFormFieldModule,
 MatDialogModule,
 HttpClientModule,
-MatSnackBarModule
+MatSnackBarModule,
+MatTooltipModule
     
     
   ],

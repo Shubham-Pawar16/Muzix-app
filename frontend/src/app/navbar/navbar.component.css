@@ -40,7 +40,7 @@ body{
   display: flex;
 }
 .menu_bar ul li{
-  padding: 10px 30px;
+  padding: 10px 20px;
   position: relative;
 }
 .menu_bar ul li a{
@@ -76,13 +76,4 @@ body{
   float: right;
   margin-left: 10px;
   padding-top: 3px;
-}
-
-.profile {
-  display: grid;
-  grid-template-columns: auto auto;
-  background-image: url("https://res.cloudinary.com/dduwkdctl/image/upload/v1673931280/Kanban%20Project/wave_oawig5.svg");
-  background-repeat: no-repeat;
-  min-height: 400px;
-  font-family: monospace;
 }

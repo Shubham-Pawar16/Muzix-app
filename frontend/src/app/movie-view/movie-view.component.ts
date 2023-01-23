@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Movies } from '../models/models/movies';
 import { MovieService } from '../movie.service';
 import { PlayComponent } from '../play/play.component';
@@ -27,7 +28,7 @@ export class MovieViewComponent {
 
   posterBaseUrl: string = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2";
   backdropBaseUrl: string = "https://www.themoviedb.org/t/p/w1066_and_h600_bestv2";
-  constructor(private movieService: MovieService, private dialog: MatDialog) {
+  constructor(private movieService: MovieService, private dialog: MatDialog,private snackBar:MatSnackBar) {
   }
 
 
@@ -57,13 +58,14 @@ export class MovieViewComponent {
     this.movieService.addMovieToFavourites(this.favouriteMovieId, this.favouriteMovieName).subscribe((res) => {
       console.log(res);
       this.alert = true;
+      this.snackBar.open("Success!! Movie added to your favourites!!","Close",{duration:3000})
     },
       err => {
-        // alert("this movie already added to your favourite list");
         this.warningAlert = true;
+        window.alert("this movie already added to your favourite list");
       });
+  } 
 
-  }
   passRecommended(movieTitle: string) {
     this.movieService.movieName = movieTitle;
   }

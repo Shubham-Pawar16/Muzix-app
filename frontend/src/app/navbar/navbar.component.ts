@@ -15,8 +15,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class NavbarComponent {
   currentUser?: User;
-  profilePicture?:string;
-  isLogIn:any = this.service.isLoginSuccess;  // logout
+  profilePicture?: string;
+  isLoggedIn: boolean = false;
+
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -24,19 +25,32 @@ export class NavbarComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, private service:LoginService,private route:Router,private snackbar:MatSnackBar) {}
+  constructor(private breakpointObserver: BreakpointObserver, private service: LoginService, private route: Router, private snackbar: MatSnackBar) { }
 
-  logout(){
+  logout() {
     this.service.removeToken();
-    window.location.reload;
+    window.location.reload();
     this.snackbar.open("Logged out successfully!");
+    console.log(this.service.removeToken());
     this.route.navigate(['/home'])
-    
+
   }
 
-  ngOnInit(){
-    if (this.isLogIn == true) {
-      console.log("user by email");
+  user: any = {};
+  email: any;
+  images() {
+    this.service.getUser(this.email).subscribe(data => {
+      this.user = data
+    })
+  }
+
+  ngOnInit() {
+    if (`${localStorage.getItem('token')}` !== "null") {
+      this.isLoggedIn = true;
+      setTimeout(() => {
+        this.currentUser = this.service.currentUser;
+        this.images;
+      })
     }
   }
 }
