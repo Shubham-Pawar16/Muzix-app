@@ -55,19 +55,33 @@ export class MovieViewComponent {
   addToFavourite(selectedMovieData: any) {
     this.favouriteMovieId = selectedMovieData.id;
     this.favouriteMovieName = selectedMovieData.original_title;
-    this.movieService.addMovieToFavourites(this.favouriteMovieId, this.favouriteMovieName).subscribe((res) => {
-      console.log(res);
-      this.alert = true;
-      this.snackBar.open("Success!! Movie added to your favourites!!","Close",{duration:3000})
-    },
-    (err:any) => {
-      if (err.status === 409) {
-        window.alert("This email is already taken! Try with other valid email!");
-      } else {
-        this.snackBar.open("Internal server error!", "Close", {duration: 3000});
+    this.movieService.addMovieToFavourites(this.favouriteMovieId, this.favouriteMovieName).subscribe({
+      next: () => {
+        console.log(this.favouriteMovieId,this.favouriteMovieName);
+        this.snackBar.open("Success!! Movie added to your favourites!!", "Close", { duration: 3000 });
+      },
+      error: (err) => {
+        if (err.status === 500) {
+          this.snackBar.open("This movie is already added to your favourites", "Close", { duration: 3000 });
+        } else {
+          this.snackBar.open("Internal server error!", "Close", { duration: 3000 });
+        }
       }
-    })
-  } 
+    });
+  }
+  
+  // .subscribe((res) => {
+  //   console.log(res);
+  //   this.alert = true;
+  //   this.snackBar.open("Success!! Movie added to your favourites!!","Close",{duration:3000})
+  // },
+  // (err:any) => {
+  //   if (err.status === 409) {
+  //     window.alert("This email is already taken! Try with other valid email!");
+  //   } else {
+  //     this.snackBar.open("Internal server error!", "Close", {duration: 3000});
+  //   }
+  // })
 
   passRecommended(movieTitle: string) {
     this.movieService.movieName = movieTitle;

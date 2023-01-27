@@ -52,6 +52,7 @@ export class RegistrationComponent {
     this.formdata.append("user", JSON.stringify(this.addressForm.value))
     this.login.storeData(this.formdata).subscribe({
       next: () => {
+        console.log(this.formdata);
         this.snackbar.open("Registered Successfully!", "Close", { duration: 3000 });
         this.route.navigateByUrl('/login');
       },

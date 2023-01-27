@@ -61,7 +61,6 @@ searchMovie(searchItem:any,currentPage:number){
     this.favMovieObj.movieId=movieId;
     this.favMovieObj.movieName=movieName;
     this.favMovieObj.email=localStorage.getItem('emailId')
-    console.log(this.favMovieObj);
     return this.http.post("http://localhost:8081/api/v3/registerFavouriteMovie",this.favMovieObj);
   }
   

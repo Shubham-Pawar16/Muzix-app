@@ -1,12 +1,12 @@
 
 <div class="recommended">
-    <div class="input-group rounded">
+    <!-- <div class="input-group rounded">
         <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" #searchitem/>
         <span class="input-group-text border-0" id="search-addon" (click)="searchRequiredMovie(searchitem.value)">
           <i class="fas fa-search search-icon"></i>
         </span>
         <i class="fa-solid fa-rotate-right reset" matToolTip="Rest" (click)="reset()"></i>
-      </div>
+      </div> -->
     <h1 class="head">Showing Recommendations for {{titleMovie}}</h1>
 <div id="movieContainer" >
     <div class="card" *ngFor="let data of allRecommendedMovies">

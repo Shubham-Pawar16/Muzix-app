@@ -38,6 +38,9 @@ public class FavouriteMovieController {
         {
             throw new MovieAlreadyExistsException();
         }
+        catch (Exception e) {
+            return new ResponseEntity<>("Server Error", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
         return responseEntity;
     }
 
