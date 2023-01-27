@@ -50,12 +50,18 @@ export class RegistrationComponent {
 
   onSubmit(): void {
     this.formdata.append("user", JSON.stringify(this.addressForm.value))
-    this.login.storeData(this.formdata).subscribe(data => {
-      console.log(data);
-      this.snackbar.open("Registered Successfully!", "Close", { duration: 3000 });
-      error: (err: any) => this.snackbar.open("Registration Failed! Due to network issues! Try after some time!", "Close", { duration: 3000 });
-
+    this.login.storeData(this.formdata).subscribe({
+      next: () => {
+        this.snackbar.open("Registered Successfully!", "Close", { duration: 3000 });
+        this.route.navigateByUrl('/login');
+      },
+      error: (err) => {
+        if (err.status === 500) {
+          this.snackbar.open("This email is already taken! Try using valid email", "Close", { duration: 3000 });
+        } else {
+          this.snackbar.open("Internal server error!", "Close", { duration: 3000 });
+        }
+      }
     });
-    this.route.navigate(['/login'])
   }
 }

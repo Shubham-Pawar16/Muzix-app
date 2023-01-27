@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4497ceab-ecfa-42f4-aa98-96c2c91bfa56" name="Changes" comment="final commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserAuthentication/src/main/java/com/example/UserAuthentication/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserAuthentication/src/main/java/com/example/UserAuthentication/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/movie-view/movie-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/movie-view/movie-view.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/registration/registration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/registration/registration.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1673600572606</updated>
       <workItem from="1674319849116" duration="2441000" />
-      <workItem from="1674455892020" duration="7564000" />
+      <workItem from="1674455892020" duration="9368000" />
     </task>
     <task id="LOCAL-00001" summary="final commit">
       <created>1674466764193</created>

@@ -60,10 +60,13 @@ export class MovieViewComponent {
       this.alert = true;
       this.snackBar.open("Success!! Movie added to your favourites!!","Close",{duration:3000})
     },
-      err => {
-        this.warningAlert = true;
-        window.alert("this movie already added to your favourite list");
-      });
+    (err:any) => {
+      if (err.status === 409) {
+        window.alert("This email is already taken! Try with other valid email!");
+      } else {
+        this.snackBar.open("Internal server error!", "Close", {duration: 3000});
+      }
+    })
   } 
 
   passRecommended(movieTitle: string) {
