@@ -1,5 +1,5 @@
+<h1 class="head">FAVOURITES</h1>
 <div class="container">
-    <h1 class="head">FAVOURITES</h1>
     <div id="movieContainer" >
       <div class="card" *ngFor="let data of favourites">
           <img  src="https://image.tmdb.org/t/p/w300/{{data.poster_path }}">
@@ -10,8 +10,7 @@
               <p>Rating: {{data.vote_average}}</p>
               <button (click)="movieDetails(data)">
                     More info
-              </button> <br><br>
-              <button style="color: black; background-color: rgb(156, 28, 28);" (click)="deleteMovie(data)">Remove</button>
+              </button>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-trash" matToolTip="Remove" style="font-size: 25px;" (click)="deleteMovie(data)" aria-hidden="true"></i>
 
           </div>
       </div>
