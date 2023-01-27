@@ -23,10 +23,10 @@ export class RegistrationComponent {
 
   addressForm = this.fb.group({
     username: ['', [Validators.required, Validators.minLength(4)]],
-    email: ['', [Validators.required, Validators.pattern("([a-zA-Z0-9]+)([\.{1}])?([a-zA-Z0-9]+)\@gmail([\.])com")]],
-    password: ['', [Validators.required, Validators.minLength(4), Validators.pattern(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{6,}$/)]],
+    email: [null, [Validators.required, Validators.pattern(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i)]],
+    password: [null, [Validators.required, Validators.minLength(6), Validators.pattern(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/)]],
     gender: [null, Validators.required],
-    phoneNumber: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(13), Validators.pattern('^[0-9]*$')]],
+    phoneNumber: [null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^[6-9][0-9]{9}/)]]
   });
 
   constructor(private fb: FormBuilder, private login: LoginService, private route: Router, private snackbar: MatSnackBar) { }
@@ -43,6 +43,7 @@ export class RegistrationComponent {
     let file: any = event.target.files[0];
     console.log(file);
     this.formdata.append("file", file);
+    this.snackbar.open("Profile picture updated Successfully!", "Close", { duration: 3000 });
   }
 
 

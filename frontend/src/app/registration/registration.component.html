@@ -21,15 +21,9 @@
                     <mat-error *ngIf="email?.errors?.['required']">
                         Email ID is required.
                     </mat-error>
-                    <mat-error *ngIf="email?.errors?.['minlength']">
-                        Email ID should have minimum of 2 characters.
-                    </mat-error>
-                    <mat-error *ngIf="email?.errors?.['maxlength']">
-                        Email ID should have maximum of 25 characters.
-                    </mat-error>
-                    <mat-error *ngIf="email?.errors?.['pattern']">
+                    <mat-error *ngIf="addressForm.controls['email'].hasError('pattern')">
                         Email ID should be of Alphabets, numbers and Eg: @example.com
-                    </mat-error>
+                      </mat-error>  
                 </mat-form-field><br>
 
                 <mat-form-field appearance="outline" style="margin-left: 120px;">
@@ -68,7 +62,7 @@
                         Phone Number should be minimum of 10 number.
                     </mat-error>
                     <mat-error *ngIf="phoneNumber?.errors?.['maxlength']">
-                        Phone Number should be minimum of 13 numbers.
+                        Phone Number should be minimum of 10 numbers.
                     </mat-error>
                 </mat-form-field><br>
 

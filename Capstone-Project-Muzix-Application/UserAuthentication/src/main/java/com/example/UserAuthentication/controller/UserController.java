@@ -38,16 +38,6 @@ public class UserController
         Map<String,String> secretkey = new HashMap<>();
         secretkey = securityTokenGenerator.generateToken(user);
         return new ResponseEntity<>(secretkey, HttpStatus.OK);
-//        String tempEmailId = user.getEmail();
-//        String tempPassword = user.getPassword();
-//        UserModel userObj = null;
-//        if (tempEmailId != null && tempPassword != null) {
-//            userObj = userService.fetchUserByEmailAndPassword(tempEmailId, tempPassword);
-//        }
-//        if (userObj.getEmail() == null && userObj.getPassword() == null) {
-//            throw new Exception("Wrong Credentials!");
-//        }
-//        return userObj;
     }
 
 }

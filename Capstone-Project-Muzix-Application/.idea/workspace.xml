@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4497ceab-ecfa-42f4-aa98-96c2c91bfa56" name="Changes" comment="" />
+    <list default="true" id="4497ceab-ecfa-42f4-aa98-96c2c91bfa56" name="Changes" comment="final commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserAuthentication/src/main/java/com/example/UserAuthentication/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserAuthentication/src/main/java/com/example/UserAuthentication/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/registration/registration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/registration/registration.component.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,8 +97,16 @@
       <option name="presentableId" value="Default" />
       <updated>1673600572606</updated>
       <workItem from="1674319849116" duration="2441000" />
-      <workItem from="1674455892020" duration="888000" />
+      <workItem from="1674455892020" duration="7564000" />
     </task>
+    <task id="LOCAL-00001" summary="final commit">
+      <created>1674466764193</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1674466764193</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,5 +122,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="final commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="final commit" />
   </component>
 </project>
