@@ -16,7 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatMenuModule} from '@angular/material/menu';
@@ -33,6 +33,7 @@ import { PlayComponent } from './play/play.component';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import { PosterComponent } from './poster/poster.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -49,12 +50,13 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     DashboardComponent,
     PlayComponent,
     PosterComponent,
-    
-    
-    
+    FilterPipe,
+     
   ],
+
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,

@@ -18,6 +18,12 @@ export class NavbarComponent {
   profilePicture?: string;
   isLoggedIn: boolean = false;
 
+  public searchTerm !: any;
+  search(event:any){
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.service.search.next(this.searchTerm);
+  }
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(

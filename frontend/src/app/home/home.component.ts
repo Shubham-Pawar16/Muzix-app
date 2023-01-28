@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from '../login.service';
 import { MovieService } from '../movie.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class HomeComponent {
   currentPg: number = 1;
 
   isLoginSuccess: boolean = false;
+  searchKey:string ="";
 
   searchItem: any;
   searchmovie: any;
@@ -20,12 +22,12 @@ export class HomeComponent {
   allSearchedMovies: any = [];
   isReady = false;
 
-  constructor(private movieService: MovieService) {
+  constructor(private movieService: MovieService, private service:LoginService) {
     this.getMovies();
   }
 
   ngOnInit() {
-    this.bannerData();
+   
   }
 
   reset() {

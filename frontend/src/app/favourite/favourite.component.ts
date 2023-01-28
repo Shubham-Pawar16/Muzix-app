@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
 import { MovieService } from '../movie.service';
 
 @Component({
@@ -21,12 +22,30 @@ export class FavouriteComponent {
   allMovies: any = []
   currentPg:number=1;
 
-  constructor(private movieService: MovieService,private router:Router,private snackBar:MatSnackBar) {  }
+  constructor(private movieService: MovieService,private router:Router,private snackBar:MatSnackBar,private service:LoginService) {  }
+
+    searchKey:string ="";
+
   ngOnInit(): void {
     this.emailId=localStorage.getItem('emailId')
     this.getFavouriteMovies();
     console.log(this.favourites);
+    this.service.search.subscribe((val:any)=>{
+      this.searchKey = val;
+    })
   }
+
+  public searchTerm !: any;
+  search(event:any){
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.service.search.next(this.searchTerm);
+  }
+  reset() {
+    window.location.reload()
+  }
+
+
   getFavouriteMovies() {
     this.movieService.getFavouriteMoviesByEmail().subscribe(res => {
       this.allFavouriteMovies = res;

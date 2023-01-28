@@ -22,7 +22,7 @@ export class RegistrationComponent {
 
 
   addressForm = this.fb.group({
-    username: ['', [Validators.required, Validators.minLength(4)]],
+    username: ['', [Validators.required, Validators.minLength(4),Validators.pattern('[a-zA-Z ]*')]],
     email: [null, [Validators.required, Validators.pattern(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i)]],
     password: [null, [Validators.required, Validators.minLength(6), Validators.pattern(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/)]],
     gender: [null, Validators.required],

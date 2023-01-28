@@ -38,10 +38,10 @@ export class RecommendationComponent {
   searchRequiredMovie(searchtext: any) {
     this.movieService.searchMovie(searchtext, this.currentPg).subscribe(resp => {
       this.searchedMovies = resp;
-      this.allSearchedMovies = this.searchedMovies.results;
-      this.allMovies = this.allSearchedMovies;
+      this.allRecommendedMovies = this.searchedMovies.results;
+      this.allMovies = this.allRecommendedMovies;
       // this.movser.storeSearchedMovieToJson(this.allSearchedMovies);
-      console.log(this.allSearchedMovies);
+      console.log(this.allRecommendedMovies);
       this.isReady = true;
     })
   }

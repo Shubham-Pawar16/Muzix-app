@@ -1,12 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from './models/models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
+  
+  public search = new BehaviorSubject<string>("");
 
 
   constructor(private httpClient: HttpClient) { }

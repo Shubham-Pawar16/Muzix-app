@@ -1,8 +1,8 @@
 form {
-  margin: 50px 50px 50px 50px;
+  margin: 50px 60px 50px 50px;
   position: relative;
   width: 580px;
-  height: 650px;
+  height: 680px;
   border-radius: 20px;
   padding: 30px;
   padding-left: 60px;
@@ -34,7 +34,7 @@ a {
 }
 
 .footer {
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .top {

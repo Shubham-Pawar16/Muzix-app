@@ -13,6 +13,10 @@
                     <mat-error *ngIf="username?.errors?.['minlength']">
                         User Name should have minimum of 4 characters.
                     </mat-error>
+                    <mat-error *ngIf="addressForm.controls['username'].hasError('pattern')">
+                        User Name cannot be numbers only.
+                      </mat-error>
+  
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" style="margin-left: 120px;">
@@ -36,8 +40,7 @@
                         Password is should be of minimum of 6 characters.
                     </mat-error>
                     <mat-error *ngIf="password?.errors?.['pattern']">
-                        Password should have min 6 letter password, with at least a symbol, upper and lower case letters
-                        and a number.
+                        Password should be combination of numbers alphabets and symbols.
                     </mat-error>
                 </mat-form-field><br>
 
@@ -64,7 +67,7 @@
                     <mat-error *ngIf="phoneNumber?.errors?.['maxlength']">
                         Phone Number should be minimum of 10 numbers.
                     </mat-error>
-                </mat-form-field><br>
+                </mat-form-field><br><br>
 
                 <div class="upload">
                     <button type="button" class="btn-warning">
