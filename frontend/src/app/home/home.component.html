@@ -8,8 +8,7 @@
         </span>
         <i class="fa-solid fa-rotate-right reset" matToolTip="Rest" (click)="reset()"></i>
     </div>
-
-
+<!-- display movies -->
     <div id="movieContainer">
         <div class="card" *ngFor="let data of allMovies">
             <img src="https://image.tmdb.org/t/p/w300/{{data.poster_path }}">
