@@ -13,6 +13,7 @@ import { User } from '../models/models/user';
 export class LoginComponent {
   user =new User()
 
+
   constructor(private login:LoginService,private route:Router, private fb:FormBuilder, private snackBar:MatSnackBar) { }
   profileForm = this.fb.group({
     email: ['', [Validators.required]],
@@ -43,6 +44,10 @@ export class LoginComponent {
 
   reload(){
     window.location.reload();
+  }
+
+  openDialog(){
+    this.route.navigate(["/register"]);
   }
 
 }

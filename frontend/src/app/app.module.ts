@@ -34,6 +34,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
 import { PosterComponent } from './poster/poster.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { FilterPipe } from './filter.pipe';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 
 @NgModule({
@@ -51,6 +53,7 @@ import { FilterPipe } from './filter.pipe';
     PlayComponent,
     PosterComponent,
     FilterPipe,
+    
      
   ],
 
@@ -76,7 +79,8 @@ import { FilterPipe } from './filter.pipe';
 MatDialogModule,
 HttpClientModule,
 MatSnackBarModule,
-MatTooltipModule
+MatTooltipModule,MatProgressSpinnerModule
+
     
     
   ],

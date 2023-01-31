@@ -1,11 +1,11 @@
-<div class="container">
-    <div class="loginPage">
+<div class="container" >
+    <div class="loginPage" style="background-image: url('../../assets/images/946175-top-movie-poster-wallpaper-1920x1080-1080p.jpg');">
         <div class="top">
             <form (ngSubmit)="onSubmit()" [formGroup]="addressForm">
                 <h3 s><strong>Registration Form</strong></h3><br>
 
                 <mat-form-field id="formfield" appearance="outline" style="margin-left: 120px;">
-                    <input matInput placeholder="User Name" type="text" id="username" formControlName="username"
+                    <input matInput placeholder="User Name*" type="text" id="username" formControlName="username"
                         [(ngModel)]="userObject.username" />
                     <mat-error *ngIf="username?.errors?.['required']">
                         User Name is required.
@@ -20,7 +20,7 @@
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" style="margin-left: 120px;">
-                    <input matInput placeholder="Email Address" type="text" id="email" formControlName="email"
+                    <input matInput placeholder="Email Address*" type="text" id="email" formControlName="email"
                         [(ngModel)]="userObject.email" />
                     <mat-error *ngIf="email?.errors?.['required']">
                         Email ID is required.
@@ -31,7 +31,7 @@
                 </mat-form-field><br>
 
                 <mat-form-field appearance="outline" style="margin-left: 120px;">
-                    <input matInput type="password" placeholder="Password" id="password" formControlName="password"
+                    <input matInput type="password" placeholder="Password*" id="password" formControlName="password"
                         [(ngModel)]="userObject.password">
                     <mat-error *ngIf="password?.errors?.['required']">
                         Password is required.
@@ -53,7 +53,7 @@
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" style="margin-left: 120px;">
-                    <input matInput type="phoneNumber" placeholder="Phone Number" id="phoneNumber"
+                    <input matInput type="phoneNumber" placeholder="Phone Number*" id="phoneNumber"
                         formControlName="phoneNumber" [(ngModel)]="userObject.phoneNumber">
                     <mat-error *ngIf="phoneNumber?.errors?.['required']">
                         Phone Number is required.
@@ -85,7 +85,7 @@
                     <span style="text-decoration: dashed;">Already Registered?</span>
                     <a routerLink="/login">
                         <button mat-raised-button
-                            style="margin-left: 20px; background-color:rgb(59, 33, 231);">Login</button></a>
+                            style="margin-left: 20px; background-color:rgb(33, 63, 231);">Login</button></a>
                 </div>
             </form>
         </div>
