@@ -9,8 +9,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Two columns */
   grid-gap: 20px; /* Add gap between columns */
-  
-  
 }
 /* Media query for screens less than 600px wide */
 @media (max-width: 6000px) {

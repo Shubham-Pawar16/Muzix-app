@@ -1,5 +1,4 @@
 
-
 .card{
     flex-basis: 250px;
     height: 440px;
@@ -26,6 +25,7 @@
     
 }
 #movieContainer{
+    overflow: hidden;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
